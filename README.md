@@ -41,14 +41,16 @@ When using in node, ensure to first require the extension so it can register its
 
 ```javascript
 var showdown = require('showdown');
-require('showdown-figure');
-var converter = new showdown.Converter({extensions: ['figure']});
+var custom = require('./custom-extensions');
+var converter = new showdown.Converter({ extensions: ['figure', custom] });
+
 ```
 
 ## Example
 
 ```javascript
-var converter = new showdown.Converter({extensions: ['figure']}),
+var custom = require('./custom-extensions'),
+    converter = new showdown.Converter({ extensions: ['figure', custom] }),
     input = '![Ship it Good!](http://www.cybersalt.org/images/funnypictures/s/supersquirrel.jpg)';
     html = converter.makeHtml(input);
 console.log(html);
