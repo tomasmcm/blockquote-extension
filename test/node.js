@@ -3,10 +3,10 @@
 
   require('chai').should();
   var showdown = require('showdown');
-  require('../src/showdown-youtube.js');
+  require('../src/showdown-figure.js');
 
   var fs = require('fs'),
-      converter = new showdown.Converter({extensions: ['youtube']}),
+      converter = new showdown.Converter({extensions: ['figure']}),
       cases = fs.readdirSync('test/cases/')
         .filter(filter())
         .map(map('test/cases/')),
@@ -17,13 +17,13 @@
   /////////////////////////////////////////////////////////////////////////////
   // Test cases
   //
-  describe('Youtube Extension simple testcases', function () {
+  describe('figure Extension simple testcases', function () {
     for (var i = 0; i < cases.length; ++i) {
       it(cases[i].name, assertion(cases[i]));
     }
   });
 
-  describe('Youtube Extension issues testcases', function () {
+  describe('figure Extension issues testcases', function () {
     for (var i = 0; i < issues.length; ++i) {
       it(issues[i].name, assertion(issues[i]));
     }

@@ -1,24 +1,25 @@
 {
-  "name": "showdown-youtube",
-  "description": "Embed YouTube videos within showdown",
-  "homepage": "https://github.com/showdownjs/youtube-extension",
+  "name": "showdown-figure",
+  "description": "Replace img tags with figure with figcaption",
+  "homepage": "https://github.com/tomasmcm/figure-extension",
   "license": "BSD-2-Clause",
   "authors": [
     "Estevão Soares dos Santos (https://github.com/tivie)",
-    "Pascal Deschênes (https://github.com/pdeschen)"
+    "Pascal Deschênes (https://github.com/pdeschen)",
+    "Tomás Correia Marques (https://github.com/tomasmcm)"
   ],
   "keywords": [
     "markdown",
     "showdown",
     "showdown extension",
-    "youtube"
+    "figure"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/showdownjs/youtube-extension.git",
-    "web": "https://github.com/showdownjs/youtube-extension"
+    "url": "https://github.com/tomasmcm/figure-extension.git",
+    "web": "https://github.com/tomasmcm/figure-extension"
   },
-  "main": ["dist/showdown-youtube.js"],
+  "main": ["dist/showdown-figure.js"],
   "ignore": [
     "src/",
     "test/",
