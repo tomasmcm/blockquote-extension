@@ -25,7 +25,7 @@
 }(function (showdown) {
 
   var figure = '<figure>' + '<img src="%1" alt="%2" title="%4">' + '<figcaption>%3</figcaption>' + '</figure>';
-  var imgRegex = /(?:<p>)?<img.*?src="(.+?)".*?alt="(.+?)"(.*?)\/?>(?:<\/p>)?/gi;
+  var imgRegex = /(?:<p>)?<img.*?src="(.+?)".*?alt="(.*?)"(.*?)\/?>(?:<\/p>)?/gi;
 
   /**
   * Replace with figure tag
