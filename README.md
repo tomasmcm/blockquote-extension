@@ -1,4 +1,4 @@
-Showdown's Figure Extension
+Showdown-Ghost's Figure Extension
 ==========================
 
 <!-- [![Build Status](https://travis-ci.org/tomasmcm/figure-extension.svg)](https://travis-ci.org/tomasmcm/figure-extension) [![npm version](https://badge.fury.io/js/showdown-figure.svg)](http://badge.fury.io/js/showdown-figure) [![npm version](https://badge.fury.io/bo/showdown-figure.svg)](http://badge.fury.io/bo/showdown-figure)
@@ -26,32 +26,24 @@ it borrows image syntax `![Description][url/img.jpg]` to create the correct figu
 
 ### Manual
 
-[Download the latest release zip or tarball](https://github.com/tomasmcm/figure-extension/releases) and include it in your webpage, after showdown:
-
-    <script src="showdown.min.js">
-    <script src="showdown-figure.min.js">
+[Download the latest release zip or tarball](https://github.com/tomasmcm/figure-extension/releases), create a folder called "custom-extensions" and copy the files into it.
+Find where Showdown-Ghost is being called and move the folder to the directory parent to that file.
 
 ## Enabling the extension
-
-After including the extension in your application, you just need to enable it in showdown.
-
-    var custom = require('./custom-extensions');
-    var converter = new showdown.Converter({ extensions: ['figure', custom] });
 
 When using in node, ensure to first require the extension so it can register itself with showdown before any converters try to use it.
 
 ```javascript
 var showdown = require('showdown');
-var custom = require('./custom-extensions');
-var converter = new showdown.Converter({ extensions: ['figure', custom] });
-
+var figure = require('../custom-extensions/figure/showdown-figure');
+var converter = new Showdown.converter({extensions: [figure]});
 ```
 
 ## Example
 
 ```javascript
-var custom = require('./custom-extensions'),
-    converter = new showdown.Converter({ extensions: ['figure', custom] }),
+var figure = require('../custom-extensions/figure/showdown-figure'),
+    converter = new Showdown.converter({extensions: [figure]}),
     input = '![Ship it Good!](http://www.cybersalt.org/images/funnypictures/s/supersquirrel.jpg)';
     html = converter.makeHtml(input);
 console.log(html);
