@@ -34,24 +34,16 @@ it borrows image syntax `![Description][url/img.jpg]` to create the correct figu
 ## Enabling the extension
 
 After including the extension in your application, you just need to enable it in showdown.
+    
+    var figure = require('../custom-extensions/figure/showdown-figure');
+    var converter = new showdown.Converter({extensions: [figure]});
 
-    var custom = require('./custom-extensions');
-    var converter = new showdown.Converter({ extensions: ['figure', custom] });
-
-When using in node, ensure to first require the extension so it can register itself with showdown before any converters try to use it.
-
-```javascript
-var showdown = require('showdown');
-var custom = require('./custom-extensions');
-var converter = new showdown.Converter({ extensions: ['figure', custom] });
-
-```
 
 ## Example
 
 ```javascript
-var custom = require('./custom-extensions'),
-    converter = new showdown.Converter({ extensions: ['figure', custom] }),
+var figure = require('../custom-extensions/figure/showdown-figure'),
+    converter = new showdown.Converter({extensions: [figure]}),
     input = '![Ship it Good!](http://www.cybersalt.org/images/funnypictures/s/supersquirrel.jpg)';
     html = converter.makeHtml(input);
 console.log(html);
