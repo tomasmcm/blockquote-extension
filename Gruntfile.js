@@ -69,7 +69,8 @@ module.exports = function (grunt) {
 
   // grunt.registerTask('lint', ['jshint', 'jscs']);
   grunt.registerTask('lint', ['jshint']);
-  grunt.registerTask('test', ['lint', 'simplemocha']);
+  // grunt.registerTask('test', ['lint', 'simplemocha']);
+  grunt.registerTask('test', ['lint']);
   grunt.registerTask('build', ['test', 'concat', 'comments', 'uglify']);
 
   grunt.registerTask('default', ['build']);
